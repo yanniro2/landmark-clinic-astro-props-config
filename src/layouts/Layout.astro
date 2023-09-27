@@ -7,6 +7,8 @@ const { title } = Astro.props;
 
 import { getImage } from "astro:assets";
 import myBackground from "../assets/gradient.png"
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/footer.astro";
 
 const optimizedBackground = await getImage({src: myBackground})
 ---
@@ -22,9 +24,9 @@ const optimizedBackground = await getImage({src: myBackground})
 		<title>{title}</title>
 	</head>
 	<body class="font-body text-black pt-[90px]" style={`background-image: url(${optimizedBackground.src});`}>
-
+		<Navigation/>
 			<slot />
-
+		<Footer/>
 	</body>
 </html>
 

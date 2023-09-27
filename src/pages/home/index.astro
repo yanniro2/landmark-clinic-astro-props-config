@@ -1,21 +1,32 @@
 ---
-import { getCollection } from 'astro:content'
-
-const posts = await getCollection('posts')
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { meta } from '@site'
+const posts = await getCollection("posts");
+// const publicFilter = posts.filter(post => post.frontMatter.draft === false);
 ---
-<ul>
-  {posts.map(post => (
-    <li>
-      <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-    </li>
-  ))}
-</ul>
 
+<Layout title="Keystatic & Astro's Content Collections">
+  <div>
+    <h1>Keystatic ⚡️ + Astro 🚀</h1>
+    <p>
+      This homepage shows how to load data from Astro's content collections.
+    </p>
+    <p>
+      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
+      below to view a post in the collection.
+    </p>
+    <h2>Posts</h2>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/home/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
 
-<!-- <section class="w-screen h-screen flex items-center justify-center">Navbar</section>
-<section class="w-screen h-screen flex items-center justify-center">Hero section</section>
-<section class="w-screen h-screen flex items-center justify-center">Category sections</section>
-<section class="w-screen h-screen flex items-center justify-center">Why landmarks</section>
-<section class="w-screen h-screen flex items-center justify-center">Compare</section>
-<section class="w-screen h-screen flex items-center justify-center">Treatments</section>
-<section class="w-screen h-screen flex items-center justify-center">Footer</section> -->
+      <!-- {console.log(posts)} -->
+    </ul>
+  </div>
+</Layout>

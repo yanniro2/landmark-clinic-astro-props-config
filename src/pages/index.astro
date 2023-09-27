@@ -1,7 +1,8 @@
 ---
+import { meta } from '@site'
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
+// import Navigation from "../components/Navigation.astro";
 import Footer from "../components/footer.astro";
 import "../styles/global.scss";
 import HeroForm from "../components/HeroForm.astro";
@@ -13,7 +14,7 @@ import HeroImage from "../assets/why-landmark.png";
 ---
 
 <Layout title="Welcome to Landmark Clinic">
-  <Navigation />
+  <!-- <Navigation /> -->
 
   <HeroForm />
 
@@ -63,5 +64,5 @@ import HeroImage from "../assets/why-landmark.png";
     btnColorDark={false}
   />
 
-  <Footer />
+  <!-- <Footer /> -->
 </Layout>

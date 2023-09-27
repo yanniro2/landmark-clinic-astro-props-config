@@ -3,33 +3,52 @@ import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 
 interface Props {
-    isRightImageLayout: boolean;
+  isRightImageLayout: boolean;
 }
-const { subline, headline, paragraph, imageSrc, imageAlt, btnCopy, btnLink, btnColorDark, isRightImageLayout } = Astro.props;
-
+const {
+  subline,
+  headline,
+  paragraph,
+  imageSrc,
+  imageAlt,
+  btnCopy,
+  btnLink,
+  btnColorDark,
+  isRightImageLayout,
+} = Astro.props;
 ---
 
 <style lang="scss">
-    .layout {
-        &.imageRight {
-            > div {
-                &:first-child {
-                    order: 1;
-                    @apply lg:order-2
-                }
-
-                &:last-child {
-                    order: 2;
-
-                    @apply lg:order-1
-                }
-            }
+  .layout {
+    &.imageRight {
+      > div {
+        &:first-child {
+          order: 1;
+          @apply lg:order-2;
         }
+
+        &:last-child {
+          order: 2;
+
+          @apply lg:order-1;
+        }
+      }
     }
+  }
 </style>
 
-<main class="container mx-auto px-4 section" >
-  <div  class:list={[ "grid", "grid-cols-12", "gap-8", "text-center", "lg:text-left", "items-center", "layout", { imageRight: isRightImageLayout }]}>
+<main class="container mx-auto px-4 section">
+  <div
+    class:list={[
+      "grid",
+      "grid-cols-12",
+      "gap-8",
+      "text-center",
+      "lg:text-left",
+      "items-center",
+      "layout",
+      { imageRight: isRightImageLayout },
+    ]}>
     <div class="col-span-12 lg:col-span-6">
       <Image
         class="max-w-[60%] lg:max-w-[80%] block mx-auto"
@@ -40,27 +59,19 @@ const { subline, headline, paragraph, imageSrc, imageAlt, btnCopy, btnLink, btnC
 
     <div class="col-span-12 lg:col-span-6">
       <div
-        class="mb-1 sm:mb-2 font-headline uppercase font-bold text-green text-sm"
-      >
+        class="mb-1 sm:mb-2 font-headline uppercase font-bold text-green text-sm">
         {subline}
       </div>
 
       <h2
-        class="font-headline font-medium text-xl leading-normal mb-4 sm:text-2xl sm:mb-6 sm:leading-snug lg:text-3xl lg:leading-snug 2xl:text-4xl 2xl:leading-tight 2xl:pr-[20%]"
-      >
+        class="font-headline font-medium text-xl leading-normal mb-4 sm:text-2xl sm:mb-6 sm:leading-snug lg:text-3xl lg:leading-snug 2xl:text-4xl 2xl:leading-tight 2xl:pr-[20%]">
         {headline}
       </h2>
-        <div class="content">
-            <Fragment set:html={paragraph.__content} />
-        </div>
+      <div class="content">
+        <Fragment set:html={paragraph.__content} />
+      </div>
 
-
-
-      <Button
-        copy={btnCopy}
-        link={btnLink}
-        isDark={btnColorDark}
-      />
+      <Button copy={btnCopy} link={btnLink} isDark={btnColorDark} />
     </div>
   </div>
 </main>

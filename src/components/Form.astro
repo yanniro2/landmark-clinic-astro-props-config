@@ -1,37 +1,71 @@
 ---
-import Button from '../components/Button.astro'
+import Button from "../components/Button.astro";
 ---
 
-<div class="bg-white p-6 lg:p-10 flex flex-col h-full rounded-xl drop-shadow-2xl">
-    <div class="mb-6">
-        <h3 class="text-green text-2xl text-center mb-3">Book a Consultation</h3>
-        <p class="text-sm lg:text-base text-center">Simply fill in your details and we'll get in touch with you shortly.</p>
-    </div>
-    
-    <div class="mt-auto">
-        <input type="text" placeholder="Name *" class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4" />
-        <input type="email" placeholder="Email *" class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4" />
-        <input type="tel" placeholder="Phone *" class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4" />
-        <textarea name="textarea" id="message" cols="30" rows="3" placeholder="Message" class="form-textarea rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4"></textarea>
+<div
+  class="bg-white p-6 lg:p-10 flex flex-col h-full rounded-xl drop-shadow-2xl">
+  <div class="mb-6">
+    <h3 class="text-green text-2xl text-center mb-3">Book a Consultation</h3>
+    <p class="text-sm lg:text-base text-center">
+      Simply fill in your details and we'll get in touch with you shortly.
+    </p>
+  </div>
 
-        <label class="flex mb-4">
-            <input class="form-checkbox rounded w-6 h-6 mr-4 text-green accent-green" type="checkbox">
-            <span class="text-sm text-grey">
-                <p>I consent to my information being used to contact me regarding my enquiry in accordance with our <a href="#" target="_blank">Privacy Policy</a></p>
-            </span>
-            </label>
+  <div class="mt-auto">
+    <input
+      type="text"
+      placeholder="Name *"
+      class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4"
+    />
+    <input
+      type="email"
+      placeholder="Email *"
+      class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4"
+    />
+    <input
+      type="tel"
+      placeholder="Phone *"
+      class="form-input rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4"
+    />
+    <textarea
+      name="textarea"
+      id="message"
+      cols="30"
+      rows="3"
+      placeholder="Message"
+      class="form-textarea rounded bg-black bg-opacity-5 border-black border-opacity-20 w-full mb-4"
+    ></textarea>
 
-        <label class="flex mb-6">
-            <input class="form-checkbox rounded w-6 h-6 mr-4 text-green accent-green" type="checkbox">
-            <span class="text-sm text-grey">
-                <p>I would like to receive information, promotions and offers via email</p>
-            </span>
-        </label>
+    <label class="flex mb-4">
+      <input
+        class="form-checkbox rounded w-6 h-6 mr-4 text-green accent-green"
+        type="checkbox"
+      />
+      <span class="text-sm text-grey">
+        <p>
+          I consent to my information being used to contact me regarding my
+          enquiry in accordance with our <a href="#" target="_blank"
+            >Privacy Policy</a>
+        </p>
+      </span>
+    </label>
 
-        <Button 
-            copy="Book Consultation"
-            link="https://www.google.com"
-            isDark={false} 
-        />
-    </div>
+    <label class="flex mb-6">
+      <input
+        class="form-checkbox rounded w-6 h-6 mr-4 text-green accent-green"
+        type="checkbox"
+      />
+      <span class="text-sm text-grey">
+        <p>
+          I would like to receive information, promotions and offers via email
+        </p>
+      </span>
+    </label>
+
+    <Button
+      copy="Book Consultation"
+      link="https://www.google.com"
+      isDark={false}
+    />
+  </div>
 </div>
