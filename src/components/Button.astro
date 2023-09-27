@@ -1,0 +1,31 @@
+---
+const { isDark } = Astro.props;
+interface Props {
+
+	copy: string;
+	link: string;
+    isDark: boolean;
+
+}
+
+const { copy, link, color } = Astro.props;
+---
+
+<style lang="scss">
+    div {
+        &.dark {
+            a {
+                @apply bg-blue;
+
+                &:hover {
+                    @apply bg-green;
+                }
+            }
+        }
+    }
+</style>
+<div class:list={["inline-block", { dark: isDark }]}>
+    <a href="{link}" title="{copy}" class="font-headline uppercase inline-block py-2 px-6 bg-green hover:bg-blue text-white font-bold lg:text-lg rounded-full transition duration-200">
+        {copy}
+    </a>
+</div>

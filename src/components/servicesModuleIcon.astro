@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import HairTransplantIcon from '../assets/hair-transplant-icon.svg'
+import BeardTransplantIcon from '../assets/beard-transplant-icon.svg'
+import EyebrowTransplantIcon from '../assets/eyebrow-transplant-icon.svg'
+import trichologyIcon from '../assets/trichology-icon.svg'
+
+---
+<main class="container mx-auto px-4 section">
+	<div class="grid grid-cols-12 gap-8">
+		<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-green bg-opacity-20 text-center p-6 rounded-3xl">
+            <div class="icon bg-green aspect-square inline-block rounded-full">
+                <Image src={HairTransplantIcon} alt="Hair Transplant" />
+            </div>
+            <h3 class="font-headline text-lg font-bold text-blue">
+                Hair Transplant
+            </h3>
+           
+        </div>
+		<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-green bg-opacity-20 text-center p-6 rounded-3xl">
+            <div class="icon bg-green aspect-square inline-block rounded-full">
+                <Image src={BeardTransplantIcon} alt="Beard Transplant" />
+            </div>
+            <h3 class="font-headline text-lg font-bold text-blue">
+                Beard Transplant
+            </h3>
+           
+        </div>
+		<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-green bg-opacity-20 text-center p-6 rounded-3xl">
+            <div class="icon bg-green aspect-square inline-block rounded-full">
+                <Image src={EyebrowTransplantIcon} alt="Eyebrow Transplant" />
+            </div>
+            <h3 class="font-headline text-lg font-bold text-blue">
+                Eyebrow Transplant
+            </h3>
+           
+        </div>
+		<div class="col-span-12 md:col-span-6 lg:col-span-3 bg-green bg-opacity-20 text-center p-6 rounded-3xl">
+            <div class="icon bg-green aspect-square inline-block rounded-full">
+                <Image src={trichologyIcon} alt="Trichology" />
+            </div>
+            <h3 class="font-headline text-lg font-bold text-blue">
+                Trichology
+            </h3>
+           
+        </div>
+
+	</div>
+</main>

@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/footer.astro";
+import "../styles/global.scss";
+import HeroForm from "../components/HeroForm.astro";
+import ServicesModuleIcon from "../components/servicesModuleIcon.astro";
+import TwoColsImageCopy from "../components/TwoColsImageCopy.astro";
+import TwoColsVideoCopy from "../components/TwoColsVideoCopy.astro";
+import Stats from "../components/Stats.astro";
+import HeroImage from "../assets/why-landmark.png";
+---
+
+<Layout title="Welcome to Landmark Clinic">
+  <Navigation />
+
+  <HeroForm />
+
+  <ServicesModuleIcon />
+
+  <TwoColsImageCopy
+  	isRightImageLayout={false}
+  	imageSrc={HeroImage}
+	  imageAlt ="Hair Transplant"
+  	subline="Why Landmark"
+    headline="We guarantee to solve your hair loss concerns."
+      paragraph={{
+          __content: `
+          <p><a href="#">Hair loss</a> is a common problem that affects people for a number of different reasons. Whether it is caused by a new medication, stress, genetics, or old age, hair loss can be an undesirable occurrence. Here at Landmark Clinic, we specialise in a variety of different treatment techniques, to help you combat unwanted hair loss and thinning hair. We take a holistic approach to hair loss in order to attain the best possible results.</p>
+        
+        <p>Our hair loss clinic in London hosts a team of highly trained
+          specialists, equipped to provide you with the best treatment option for
+          you. For example, men’s hair loss can be prevented and fought against
+          via <a href="#">non-surgical procedures</a>; these are ideal for those
+          who are against the more invasive surgical options available, and can
+          range from micropigmentation scalp treatment, trichology to laser
+          re-growth procedures. There are even choices available where natural and
+          medically approved products can be used directly onto the hair and
+          scalp, to encourage your hair’s own growth.</p>
+      `,
+    }}
+    btnCopy="Book Consultation"
+    btnLink="https://www.google.com"
+    btnColorDark={false}
+  />
+
+
+  <Stats />
+
+  <TwoColsVideoCopy
+  	isRightImageLayout={true}
+  	subline="Treatments"
+    headline="Quality Hair Loss Solutions Accessible to Everyone"
+      paragraph={{
+          __content: `
+          <p>Alternatively, we offer <a href="#">surgical solutions</a> to help you regain your old head of hair. Hair transplantation is a popular treatment method within this category, where individual hair follicles are taken from the back of the head – a strong donor site – and planted directly into a bald or balding part of your scalp. While hair loss treatments are most often associated with male-baldness, hair loss can affect women just as much; we are therefore happy to consult with you, if you are a woman experience thinning or balding hair.</p>
+          <p>Whatever your preferred path, we have a treatment plan suited to your individual preferences, budgets and needs. For more information, please do not hesitate to <a href="#">contact us</a>. Someone from our team here at Landmark Clinic will be happy to discuss our hair replacement systems London options with you.</p>
+      `,
+    }}
+    btnCopy="Free Consultation"
+    btnLink="https://www.google.com"
+    btnColorDark={false}
+  />
+
+  <Footer />
+</Layout>
